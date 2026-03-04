@@ -59,6 +59,17 @@ These 5 agents run entirely in the background when files are uploaded. They are 
 
 ---
 
+## 3.5. Narrative Agent (The Video Storyteller)
+* **Engine Used:** Text LLM via Ollama (`get_ollama_client()`)
+* **File:** `src/vision/narrative_agent.py` — Class: `NarrativeAgent`
+* **Purpose:** Provides high-level LLM enrichment for structured, multi-stream video extractions.
+* **How it Works:** Lazily loaded by `VideoProcessor`. It receives a time-aligned structural concatenation of Whisper audio, FastOCR text, and Qwen vision descriptions. It generates a single, cohesive humanized narrative for the entire video.
+* **📥 Listens To (Inputs):** `VideoProcessor` (Stage 7 of video processing loop)
+* **📤 Reports To (Outputs):** `VideoProcessor` (returns the unified text for `video_visual` enrichment)
+* **⚠️ Note:** This agent is designed for graceful fallback; if it is unavailable, the system drops back to raw structured context instead of failing.
+
+---
+
 ## 4. Semantic Embedder Agent (The Librarian)
 * **Engine Used:** `sentence-transformers/all-MiniLM-L6-v2` (384-dimensional vectors)
 * **File:** `src/data/embedder.py` — Class: `DeterministicEmbedder`
@@ -364,4 +375,19 @@ These agents are triggered by clicking action buttons in the UI. They bypass the
 
 ---
 
-*End of Architecture Guide — Verified against live source code, 2026-02-27.*
+# Section 3: Autonomous System Infrastructure (Non-LLM Actors)
+
+While the agents above represent the "Brain," the system requires autonomous infrastructure actors to ensure stability. These do not use LLMs, but they act independently to maintain system health.
+
+## 30. Ingestion Watchdog (The System Healer)
+* **Engine Used:** Python `asyncio` Background Task
+* **File:** `src/core/ingestion_watchdog.py` — Class: `IngestionWatchdog`
+* **Purpose:** A self-healing monitor that prevents the system from permanently hanging if a massive PDF or video file crashes during background processing.
+* **How it Works:** Upon server launch (in `api/main.py`), this background task wakes up every 5 minutes. It scans the SQLite `ingestion_status` table for any jobs stuck in `IN_PROGRESS` for longer than 30 minutes. If it finds one, it autonomously updates the state to `FAILED`, releasing locks and allowing the user interface to retry the ingestion.
+* **📥 Listens To (Inputs):** The SQLite Database (time-driven autonomous polling)
+* **📤 Reports To (Outputs):** Mutates the database state directly, which updates the UI progress indicators.
+* **⚠️ Importance:** Extremely high for production stability. Without this watchdog, an out-of-memory crash during early video extraction would leave the UI spinning forever and permanently block the file from being retried.
+
+---
+
+*End of Architecture Guide — Verified against live source code, 2026-03-04.*
