@@ -66,7 +66,7 @@ graph TD
     
     %% Structured Formatting
     F --> G[Context Builder]:::process
-    G --> |Format: \[MM:SS\] SPEECH: Text| H[Structured Audio Transcript]:::storage
+    G --> |"Format: [MM:SS] SPEECH: Text"| H[Structured Audio Transcript]:::storage
     
     %% Asynchronous Background Enrichment Phase
     H --> I>Trigger Asynchronous Background Task]:::bg
