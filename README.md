@@ -93,12 +93,28 @@ Run_SpandaOS.bat
 
 The API server will launch at `http://localhost:8000`. Navigate to the provided local URL in your web browser to access the cinematic UI.
 
-## 🤝 Contributing & Auditing
+## 📚 Comprehensive Documentation Hub
 
-The system's architecture, including LangGraph agent interactions and continuous learning lifecycles, has been rigorously documented and audited. For detailed architectural insights, refer to the documentation in the `About Apllication/` directory:
-- `AI_Agnets.md` -> Source of truth for all 30 sub-agents
-- `SpandaOS_Agents_Overview.md` -> High-level agent connectivity and logic graphs
-- `SpandaOS_Modules.md` -> Modular `.py` structural documentation
+The system's architecture, including LangGraph agent interactions, multi-modal capabilities, and continuous learning lifecycles, has been rigorously documented. For detailed insights, refer to the documentation in the `About Spanda Operating Soul/` directory:
+
+### Core Architecture & Agents
+- **[SpandaOS Agents Overview](About%20Spanda%20Operating%20Soul/SpandaOS_Agents_Overview.md)**: Macroscopic view of the 30-agent connectivity and LangGraph data flow.
+- **[SpandaOS AI Agents Deep-Dive](About%20Spanda%20Operating%20Soul/SpandaOS_AI_Agnets.md)**: Extremely detailed breakdown of every single Phase 1-6 AI agent, their local LLM models, and specific roles.
+- **[SpandaOS Modules](About%20Spanda%20Operating%20Soul/SpandaOS_Modules.md)**: Single source of truth for all Python modules, including database schemas and FastAPI routes.
+- **[SpandaOS Database Architecture](About%20Spanda%20Operating%20Soul/SpandaOS_Database.md)**: Detailed breakdown of the revolutionary Dual-Database (LanceDB + SQLite) persistence layer.
+
+### Multimodal Processing Workflows
+- **[Document Processing](About%20Spanda%20Operating%20Soul/Document%20Processing.md)**: How PDFs and pure text are dynamically ingested, OCR'd, and vectorized natively.
+- **[Image Processing](About%20Spanda%20Operating%20Soul/Image%20Processing.md)**: The SOTA Vision-HD tiled perception pipeline for massive image extraction via Qwen2-VL.
+- **[Video Processing](About%20Spanda%20Operating%20Soul/Video%20Processing.md)**: Reel-aware frame sampling, temporal context fusion, and seamless audio-visual synchronization.
+- **[Audio Processing](About%20Spanda%20Operating%20Soul/Audio%20Processing.md)**: High-speed local CPU-bound Whisper transcription and Qwen-powered narrative enrichment.
+
+### Specialized Agentic Action Flows
+- **[Deep Insights](About%20Spanda%20Operating%20Soul/Agentic_Flow%20Deep%20Insights.md)**: The 3-stage multi-agent reflection loop (Analyst ↔ Skeptic ↔ Synthesizer) designed for rigorous interrogation.
+- **[Executive Summary](About%20Spanda%20Operating%20Soul/Agentic_Flow%20Executive%20Summary.md)**: Rapid generation of C-Suite-ready reports utilizing Context-Aware XML formatting.
+- **[Risk Assessment](About%20Spanda%20Operating%20Soul/Agentic_Flow%20Risk%20Assessment.md)**: A JSON-enforced vulnerability scanner that powers dynamic UI risk matrices.
+
+## 🤝 Contributing
 
 Contributions are welcome! Please review `CONTRIBUTING.md` for our standardization guidelines.
 
