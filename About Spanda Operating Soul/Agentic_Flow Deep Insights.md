@@ -6,7 +6,7 @@ This document explains the Deep Insights flow in SpandaOS, detailing the step-by
 ## Step-by-Step Flow
 
 ### Step 1
-After the end of RAG based queries we will have three agentic buttons. One of the Button is 'Deep Insight'.
+After the end of Grounded Cognitive queries we will have three agentic buttons. One of the Button is 'Deep Insight'.
 
 ![Deep Insight Step 1](Media/Agentic/Deep1.png)
 
@@ -41,7 +41,7 @@ flowchart TD
     classDef uiElement fill:#16a085,stroke:#1abc9c,stroke-width:2px,color:#fff,rx:5px,ry:5px
     classDef finishNode fill:#27ae60,stroke:#2ecc71,stroke-width:2px,color:#fff,rx:5px,ry:5px
 
-    A[User Completes Standard RAG Query]:::stateNode --> B{Agentic Action Buttons UI Displayed}:::uiElement
+    A[User Completes Grounded Cognitive Query]:::stateNode --> B{Agentic Action Buttons UI Displayed}:::uiElement
     
     B -->|User Clicks| C(Deep Insight Button clicked):::userAction
     B --> btn2(Other Agentic Function...):::uiElement
@@ -72,7 +72,7 @@ flowchart TD
     K --> L[Generate AI Predicted Next Steps]:::agentCore
     L --> M{Display Prediction Action Tags}:::uiElement
     
-    M -->|User Clicks AI Suggestion| N[Trigger Next Generative RAG/Agentic Context Query]:::userAction
+    M -->|User Clicks AI Suggestion| N[Trigger Next Context-Aware Synthesis Query]:::userAction
     M -->|User Ignores Recommendations| O([End of Current Insight Flow]):::finishNode
     
     N --> A

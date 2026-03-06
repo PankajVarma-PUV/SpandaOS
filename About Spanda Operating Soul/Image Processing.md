@@ -20,13 +20,13 @@ Once uploaded, **the system will detect the image file and start extracting mean
 
 ![Step 3: Data Enrichment](Media/Image/image3.png)
 
-## Step 4: Knowledge Base Storage & RAG Initiation
-**Once enrichment gets done and the image-related textual data gets stored in the knowledge base, the application starts processing the user query with the RAG (Retrieval-Augmented Generation) flow.** By securely indexing the enriched textual dossiers into our vector database, the originally unstructured image essentially transforms into a highly searchable repository of knowledge ready for semantic matching.
+## Step 4: Knowledge Base Storage & Metacognitive Retrieval Initiation
+**Once enrichment gets done and the image-related textual data gets stored in the knowledge base, the application starts processing the user query with the Metacognitive Retrieval flow.** By securely indexing the enriched textual dossiers into our vector database, the originally unstructured image essentially transforms into a highly searchable repository of knowledge ready for semantic matching.
 
 ![Step 4: Knowledge Base Storage](Media/Image/image4.png)
 
 ## Step 5: Context Retrieval & Synthesizer Generation
-**Based on the user query, the RAG flow scrapes the related context from the knowledge base and delivers it to the Synthesizer model to generate a proper response.** The semantic search engine locates the exact informational fragments (chunks) required from the newly enriched image data, passing them as explicit context variables to guarantee accuracy over general AI knowledge.
+**Based on the user query, the Metacognitive Retrieval flow scrapes the related context from the knowledge base and delivers it to the Synthesizer model to generate a proper response.** The semantic search engine locates the exact informational fragments (chunks) required from the newly enriched image data, passing them as explicit context variables to guarantee accuracy over general AI knowledge.
 
 ![Step 5: Context Retrieval](Media/Image/image5.png)
 
@@ -91,8 +91,8 @@ graph TD
     M --> |Synthesizes & Structures Data| N[Enriched Knowledge Base File]:::storage
     N --> O[(Vector Database Indexed)]:::storage
     
-    %% Retrieval & Generation (RAG) Phase
-    O --> |Activated by User Query| P[RAG Semantic Matcher]:::process
+    %% Metacognitive Retrieval & Synthesis Phase
+    O --> |Activated by User Query| P[Metacognitive Semantic Matcher]:::process
     P --> |Inject Top Chunks as Context| Q[Synthesizer Model]:::model
     
     %% Metacognitive Validation Phase
@@ -107,6 +107,6 @@ graph TD
     
     V -.-> |User clicks Image Pill| W[Source Explorer Side-Panel]:::ui
     W --> X[Visually Render Image]:::ui
-    W --> Y[Display RAG Evidence Chunks]:::ui
+    W --> Y[Display Grounded Evidence Chunks]:::ui
     W --> Z[Expose Technical Meta-Data]:::ui
 ```

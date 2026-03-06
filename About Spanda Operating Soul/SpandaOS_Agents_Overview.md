@@ -151,7 +151,7 @@ graph TD
         
         %% Conditional Routing
         Router -->|Intent: HISTORY_RECALL| Reformulator
-        Router -->|Intent: RAG, MULTI_TASK, PERCEPTION, GENERAL| Planner
+        Router -->|Intent: RETRIEVAL, MULTI_TASK, PERCEPTION, GENERAL| Planner
         
         %% History Path Routing
         Reformulator -->|De-references pronouns| MemoryMem
@@ -160,7 +160,7 @@ graph TD
         
         %% Planner Conditional Routing
         Planner -->|Mode: perception| Perception
-        Planner -->|Mode: rag| Retriever
+        Planner -->|Mode: retrieval| Retriever
         Planner -->|Mode: direct| DirectInit
         
         %% Retrieval 
@@ -335,11 +335,11 @@ graph TD
     
     %% Intent Classification Split
     Router -->|Intent: HISTORY_RECALL| HistoryPath[To Memory Reformulator]
-    Router -->|Intent: RAG, MULTI_TASK, PERCEPTION, GENERAL| RAGPath[To Multi-Stage Planner]
+    Router -->|Intent: RETRIEVAL, MULTI_TASK, PERCEPTION, GENERAL| RetrievalPath[To Multi-Stage Planner]
 ```
 
 ## 3. Evidence Gathering & Memory Pathways
-This view details the two primary retrieval mechanisms in LangGraph: History/Conversation Memory and RAG Vector Search.
+This view details the two primary retrieval mechanisms in LangGraph: History/Conversation Memory and Vector Retrieval.
 
 ```mermaid
 graph TD
@@ -354,11 +354,11 @@ graph TD
     Mem --> Chronicler["21. History Chronicler"]:::graphNode
     Chronicler --> Phase4[To UI Orchestrator]
     
-    Router -->|RAG, PERCEPTION, GENERAL| Planner["11. Multi-Stage Planner"]:::graphNode
+    Router -->|RETRIEVAL, PERCEPTION, GENERAL| Planner["11. Multi-Stage Planner"]:::graphNode
     
     %% Planner execution paths
     Planner -->|perception intent| Perception["Perception Engine"]:::graphNode
-    Planner -->|rag intent| Retriever["12. Retriever Agent"]:::graphNode
+    Planner -->|retrieval intent| Retriever["12. Retriever Agent"]:::graphNode
     Planner -->|general intent / No Evidence| Direct["Direct Initiator"]:::graphNode
     
     %% Retrieval components

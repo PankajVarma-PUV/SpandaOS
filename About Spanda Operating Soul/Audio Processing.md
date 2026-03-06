@@ -14,9 +14,9 @@ These extracted insights get instantly delivered to the `'Qwen3:8B'` narrative L
 
 ![Step 2: Transcription and Enrichment](Media/Audio/Audio2.png)
 
-## Step 3: Knowledge Base Storage & RAG Context Retrieval
-**Once enrichment gets done and the audio-related textual data gets stored in the knowledge base, the application starts processing the user query with the RAG (Retrieval-Augmented Generation) flow.** By securely indexing the polished audio dossier into our vector database, spoken conversations essentially transform into highly searchable paragraphs of text. 
-**Based on the user query, the RAG flow scrapes the related context and delivers it to the Synthesizer model to generate a proper response.** The RAG semantic search engine surfaces the exact moments and transcriptions from the audio file necessary to perfectly address the prompt.
+## Step 3: Knowledge Base Storage & Metacognitive Context Retrieval
+**Once enrichment gets done and the audio-related textual data gets stored in the knowledge base, the application starts processing the user query with the Metacognitive Retrieval flow.** By securely indexing the polished audio dossier into our vector database, spoken conversations essentially transform into highly searchable paragraphs of text. 
+**Based on the user query, the Metacognitive Retrieval flow scrapes the related context and delivers it to the Synthesizer model to generate a proper response.** The semantic search engine surfaces the exact moments and transcriptions from the audio file necessary to perfectly address the prompt.
 
 ![Step 3: Storage and Context Retrieval](Media/Audio/Audio3.png)
 
@@ -76,8 +76,8 @@ graph TD
     %% Vector Storage Phase
     K --> L[(Vector Storage Indexed)]:::storage
     
-    %% Retrieval & Generation (RAG) Phase
-    L --> |Activated by User Query| M[RAG Semantic Matcher]:::process
+    %% Metacognitive Retrieval & Synthesis Phase
+    L --> |Activated by User Query| M[Metacognitive Semantic Matcher]:::process
     M --> |Inject Audio Chunks as Context| N[Synthesizer Model]:::model
     
     %% Metacognitive Validation Phase

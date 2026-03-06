@@ -1,12 +1,12 @@
 # Agentic Flow: Executive Summary
 
 ## Overview
-This document outlines the **Executive Summary** flow in SpandaOS. It explains the step-by-step process of how the system transitions from a standard RAG query to utilizing a Context-Aware XML Few-Shot prompt to generate a structured, C-suite ready summary.
+This document outlines the **Executive Summary** flow in SpandaOS. It explains the step-by-step process of how the system transitions from a Grounded Cognitive Query to utilizing a Context-Aware XML Few-Shot prompt to generate a structured, C-suite ready summary.
 
 ## Step-by-Step Flow
 
 ### Step 1
-After the end of RAG based queries we will have three agentic buttons. One of the Button is 'Executive Summary'.
+After the end of Grounded Cognitive queries we will have three agentic buttons. One of the Button is 'Executive Summary'.
 
 ![Executive Summary Step 1](Media/Agentic/Summary1.png)
 
@@ -41,7 +41,7 @@ flowchart TD
     classDef uiElement fill:#16a085,stroke:#1abc9c,stroke-width:2px,color:#fff,rx:5px,ry:5px
     classDef finishNode fill:#27ae60,stroke:#2ecc71,stroke-width:2px,color:#fff,rx:5px,ry:5px
 
-    A[User Completes Standard RAG Query]:::stateNode --> B{Agentic Action Buttons UI Displayed}:::uiElement
+    A[User Completes Grounded Cognitive Query]:::stateNode --> B{Agentic Action Buttons UI Displayed}:::uiElement
     
     B -->|User Clicks| C(Executive Summary Button clicked):::userAction
     B --> btn2(Other Agentic Function...):::uiElement
@@ -51,7 +51,7 @@ flowchart TD
     
     subgraph Execution Pipeline [Executive Summary Generation Pipeline]
         direction TB
-        D --> E[Retrieve Previous RAG Query Context]:::processing
+        D --> E[Retrieve Previous Query Context]:::processing
         
         E --> F[Inject Context-Aware XML Few-Shot Prompt]:::agentCore
         
@@ -74,7 +74,7 @@ flowchart TD
     K --> L[Generate AI Predicted Next Steps]:::agentCore
     L --> M{Display Prediction Action Tags}:::uiElement
     
-    M -->|User Clicks AI Suggestion| N[Trigger Next Generative RAG/Agentic Context Query]:::userAction
+    M -->|User Clicks AI Suggestion| N[Trigger Next Context-Aware Synthesis Query]:::userAction
     M -->|User Ignores Recommendations| O([End of Current Summary Flow]):::finishNode
     
     N --> A

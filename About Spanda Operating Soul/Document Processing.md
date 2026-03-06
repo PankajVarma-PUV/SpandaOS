@@ -16,9 +16,9 @@ SpandaOS actively analyzes each page dynamically:
 
 ![Step 2: Dual-Extraction Pipeline](Media/Document/txt2.png)
 
-## Step 3: Knowledge Base Storage & RAG Context Retrieval
-**Once text extraction gets done and the related textual data gets stored in the knowledge base, the application starts processing the user query with the RAG (Retrieval-Augmented Generation) flow.** By securely clustering and indexing the extracted chapters and descriptions into the vector database, lengthy documents transform into rapidly searchable knowledge. 
-**Based on the user query, the RAG flow scrapes the related context and delivers it to the Synthesizer model to generate a proper response.** The RAG engine scans the hundreds or thousands of pages and retrieves only the exact paragraphs semantically related to the prompt, injecting them as grounded evidence.
+## Step 3: Knowledge Base Storage & Metacognitive Context Retrieval
+**Once text extraction gets done and the related textual data gets stored in the knowledge base, the application starts processing the user query with the Metacognitive Retrieval flow.** By securely clustering and indexing the extracted chapters and descriptions into the vector database, lengthy documents transform into rapidly searchable knowledge. 
+**Based on the user query, the Metacognitive Retrieval flow scrapes the related context and delivers it to the Synthesizer model to generate a proper response.** The retrieval engine scans the hundreds or thousands of pages and retrieves only the exact paragraphs semantically related to the prompt, injecting them as grounded evidence.
 
 ![Step 3: Storage and Retrieval](Media/Document/txt3.png)
 
@@ -84,8 +84,8 @@ graph TD
     M --> N[Intelligent Text Chunking Node]:::process
     N --> O[(Vector Database Indexed)]:::storage
     
-    %% Retrieval & Generation (RAG) Phase
-    O --> |Activated by User Query| P[RAG Semantic Matcher]:::process
+    %% Metacognitive Retrieval & Synthesis Phase
+    O --> |Activated by User Query| P[Metacognitive Semantic Matcher]:::process
     P --> |Inject Top K Chunks as Context| Q[Synthesizer Model]:::model
     
     %% Metacognitive Validation Phase

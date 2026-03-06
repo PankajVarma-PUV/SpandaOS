@@ -1,7 +1,7 @@
-<h1 align="center">🛡️ SpandaOS: The Metacognitive RAG Operating System</h1>
+<h1 align="center"><img src="SpandaOS_Logo.svg" alt="SpandaOS Logo" width="40" height="40" style="vertical-align: middle; margin-right: 10px;"> SpandaOS: The Sovereign Cognitive Architecture</h1>
 
 <p align="center">
-  <em>An advanced, autonomous Retrieval-Augmented Generation (RAG) system powered by a 30-Agent LangGraph Architecture, Continuous Learning, and Multimodal Senses.</em>
+  <em>An advanced, autonomous Sovereign Cognitive Architecture powered by a 30-Agent LangGraph Ecosystem, Continuous Learning, and Multimodal Senses.</em>
 </p>
 
 <p align="center">
@@ -21,9 +21,9 @@ With a rich, cinematic streaming UI, SpandaOS surfaces the "inner monologue" of 
 
 ## ✨ Key Features
 
-- **🧠 The Metacognitive Brain (LangGraph)**: The absolute supervisor. It dynamically routes queries (RAG, Perception, Multi-Task, History Recall), generates execution DAGs via a Multi-Stage Planner, and fuses multimodal state.
+- **🧠 The Metacognitive Brain (LangGraph)**: The absolute supervisor. It dynamically routes queries (Metacognitive Retrieval, Perception, Multi-Task, History Recall), generates execution DAGs via a Multi-Stage Planner, and fuses multimodal state.
 - **👁️ Multimodal Senses (Ingestion Pipeline)**: Background extractor agents process formats natively. Supported by `Qwen-VL-2B` vision descriptions, `EasyOCR` tiled scanning, `faster-whisper` audio transcription, and intelligent video keyframe sampling.
-- **🛡️ NLI Fact-Checking & Self-Healing**: Synthesized responses are rigorously audited by a CrossEncoder Fact Checker. Unsupported or loose claims are surgically rewritten by a DeepSeek-powered Hallucination Healer before reaching the user.
+- **NLI Fact-Checking & Self-Healing**: Synthesized responses are rigorously audited by a CrossEncoder Fact Checker. Unsupported or loose claims are surgically rewritten by a DeepSeek-powered Hallucination Healer before reaching the user.
 - **🔄 Continuous Learning Loop**: A background `ReflectionAgent` processes negative feedback, deduces system mistakes, and atomically writes new behavioral rules to a system guidelines database using semantic deduplication, dynamically altering future responses.
 - **⚡ Specialized Action Agents**: Lightning-fast, direct vector API pathways triggered by UI buttons for **Executive Summaries**, multi-agent **Deep Insights** (Analyst ↔ Skeptic ↔ Synthesizer debate), and rigorous **Risk Assessments**.
 - **📚 SOTA Hybrid Retrieval**: Combines LanceDB dense vector search (all-MiniLM-L6-v2) with BM25 keyword matching, refined inline by a Neural Reranker.

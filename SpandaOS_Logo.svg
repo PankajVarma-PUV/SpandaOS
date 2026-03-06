@@ -1,0 +1,567 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#020617" />
+    </radialGradient>
+
+    <!-- Primary Spanda Energy (Consciousness / Prakasha) -->
+    <linearGradient id="primary-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#C084FC" />
+    </linearGradient>
+
+    <!-- Secondary Spanda Energy (Shakti / Vimarsha) -->
+    <linearGradient id="gold-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+
+    <!-- Metallic rings -->
+    <linearGradient id="metal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94A3B8" />
+      <stop offset="50%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+
+    <!-- Rich Core Pulse -->
+    <radialGradient id="core-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="30%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Deep Mandala Ambient Bloom — cosmic nebula behind entire geometry -->
+    <radialGradient id="ambient-bloom" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#818CF8" stop-opacity="0.18"/>
+      <stop offset="35%"  stop-color="#38BDF8" stop-opacity="0.07"/>
+      <stop offset="65%"  stop-color="#C084FC" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Satkona interior fill — subtle luminous hexagonal center -->
+    <radialGradient id="satkona-fill" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#818CF8" stop-opacity="0.22"/>
+      <stop offset="60%"  stop-color="#38BDF8" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Typography Gradient -->
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#CBD5E1" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+
+    <!-- Glow Effects -->
+    <filter id="glow-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="18" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glow-heavy" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="text-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bg-grad)" />
+
+  <!-- Center Frame Translation -->
+  <g transform="translate(400, 400)">
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- OUTER SOVEREIGN BOUNDARY                                            -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <circle cx="0" cy="0" r="240" fill="none" stroke="url(#primary-grad)" stroke-width="2.5" opacity="0.9" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="236" fill="none" stroke="url(#gold-grad)" stroke-width="1" opacity="0.6" stroke-dasharray="2 6" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="228" fill="none" stroke="#FFFFFF" stroke-width="0.5" opacity="0.3" stroke-dasharray="1 10"/>
+
+    <!-- Enhancement 1 — Deep-space cosmic ambient bloom                     -->
+    <!-- A large, very soft radial fill that gives the entire mandala        -->
+    <!-- a three-dimensional stellar presence on the dark background.        -->
+    <circle cx="0" cy="0" r="238" fill="url(#ambient-bloom)" filter="url(#glow-soft)"/>
+
+
+
+    <!-- Enhancement 3 — Satkona luminous hexagonal fill                    -->
+    <!-- A very low-opacity fill inside the inner hexagon of the Satkona,   -->
+    <!-- giving the star's heart a warm, pulsing luminosity rather than      -->
+    <!-- reading as an empty wireframe.                                      -->
+    <polygon
+      points="106.84,0 53.42,-92.5 -53.42,-92.5 -106.84,0 -53.42,92.5 53.42,92.5"
+      fill="url(#satkona-fill)" opacity="0.9"/>
+
+    <!-- Enhancement 4 — Outer boundary accent tick marks                   -->
+    <!-- 5 precise radial tick marks aligned with each agent node,          -->
+    <!-- bridging the r=228 and r=252 zone — anchoring agents to the ring.  -->
+    <!-- These are at the 5 agent angles: 270°, 342°, 54°, 126°, 198°      -->
+    <g stroke="#FFFFFF" stroke-width="1.5" opacity="0.55" filter="url(#glow)">
+      <!-- Document (270°): (0,-228) → (0,-252) -->
+      <line x1="0"       y1="-228"  x2="0"       y2="-252"/>
+      <!-- Video (342°): r·cos342°=r·0.951, r·sin342°=r·-0.309 -->
+      <line x1="216.9"   y1="-70.4" x2="239.8"   y2="-77.8"/>
+      <!-- Web (54°):  r·cos54°=r·0.588, r·sin54°=r·0.809 -->
+      <line x1="134.0"   y1="184.4" x2="148.1"   y2="203.7"/>
+      <!-- Image (126°): r·cos126°=−0.588r, r·sin126°=0.809r -->
+      <line x1="-134.0"  y1="184.4" x2="-148.1"  y2="203.7"/>
+      <!-- Audio (198°): r·cos198°=−0.951r, r·sin198°=−0.309r -->
+      <line x1="-216.9"  y1="-70.4" x2="-239.8"  y2="-77.8"/>
+    </g>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- NIMESA–UNMESA THRESHOLD RING                                        -->
+    <!-- The boundary between the Bindu core and the Spanda vibrational     -->
+    <!-- field. Nimesa = inward contraction; Unmesa = outward expansion.     -->
+    <!-- r=134–148: three rings suggest the trembling at the threshold.      -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <g opacity="0.9">
+      <!-- Outer threshold glow -->
+      <circle cx="0" cy="0" r="148" fill="none"
+              stroke="url(#primary-grad)" stroke-width="0.6"
+              stroke-dasharray="3 5" opacity="0.9" filter="url(#glow)"/>
+      <!-- Main threshold ring -->
+      <circle cx="0" cy="0" r="142" fill="none"
+              stroke="url(#metal-grad)" stroke-width="2"
+              opacity="0.75" filter="url(#glow)"/>
+      <!-- Inner threshold pulse (Nimesa rhythm) -->
+      <circle cx="0" cy="0" r="136" fill="none"
+              stroke="url(#gold-grad)" stroke-width="0.6"
+              stroke-dasharray="1 9" opacity="0.7"/>
+    </g>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- SPANDA VIBRATIONAL FIELD — Middle Layer Architecture                -->
+    <!--                                                                     -->
+    <!-- Rooted in Kashmir Shaivism's Spanda doctrine (Spanda Karikas,       -->
+    <!-- Vasugupta / Kallata, 9th c. CE).                                    -->
+    <!--                                                                     -->
+    <!-- SYMBOLIC ENCODING:                                                  -->
+    <!--   • Three rings = Iccha (Will) · Jnana (Knowledge) · Kriya (Action) -->
+    <!--     These are the Trika powers through which Spanda manifests.      -->
+    <!--   • Satkona = Shiva (▲ Prakasha) interlocked with Shakti (▽ Vimarsha)-->
+    <!--     Outer vertices at r=185 anchor the Jnana ring.                  -->
+    <!--     Inner hexagon at r≈107 touches the core Bindu boundary.         -->
+    <!--   • 12 Kala Spokes = The 12 radiant rays of Spanda consciousness    -->
+    <!--     Each spoke aligns precisely with a Satkona vertex or hexagon pt. -->
+    <!--   • Vikasa Arches = The blossoming (vikasa) of consciousness;        -->
+    <!--     six arcs connecting star vertices suggest outward flowering.     -->
+    <!--                                                                     -->
+    <!-- PRECISION COORDINATES (all verified geometrically):                 -->
+    <!--   Spoke angle α measured clockwise from top (SVG convention)        -->
+    <!--   Satkona R=185: inner hex intersection r = 185/√3 ≈ 106.84         -->
+    <!--   All 12 spoke directions align with a Satkona or hexagon vertex.   -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+
+    <g id="spanda-vibrational-field" opacity="0.92">
+
+      <!-- ─────────────────────────────────────────────────────────────── -->
+      <!-- TRIKA EMANATION RINGS                                           -->
+      <!-- Three concentric "standing waves" of consciousness expanding   -->
+      <!-- outward from the Bindu. Each ring is a distinct Sakti level.  -->
+      <!-- Dash patterns encode Nimesa (rest) and Unmesa (pulse) rhythm.  -->
+      <!-- ─────────────────────────────────────────────────────────────── -->
+
+      <!-- ICCHA RING (r≈162) — Will: the first trembling desire to manifest -->
+      <!-- Finest, most delicate — barely visible high-frequency pulse       -->
+      <circle cx="0" cy="0" r="164" fill="none"
+              stroke="url(#primary-grad)" stroke-width="0.9"
+              stroke-dasharray="5 7" opacity="0.65" filter="url(#glow)"/>
+      <circle cx="0" cy="0" r="159" fill="none"
+              stroke="url(#primary-grad)" stroke-width="0.35"
+              stroke-dasharray="1 15" opacity="0.38"/>
+
+      <!-- JNANA RING (r=185) — Knowledge: the clear identification of       -->
+      <!-- subject and object; the brightest and most defined boundary.      -->
+      <!-- This ring IS the Satkona boundary (star vertices land here).      -->
+      <circle cx="0" cy="0" r="187" fill="none"
+              stroke="url(#metal-grad)" stroke-width="1.3"
+              opacity="0.78" filter="url(#glow)"/>
+
+
+      <!-- KRIYA RING (r≈210) — Action: final outward manifestation;         -->
+      <!-- longer dashes suggest the slower, steadier rhythm of action.      -->
+      <circle cx="0" cy="0" r="212" fill="none"
+              stroke="url(#gold-grad)" stroke-width="1"
+              stroke-dasharray="8 4" opacity="0.65" filter="url(#glow)"/>
+      <circle cx="0" cy="0" r="208" fill="none"
+              stroke="url(#primary-grad)" stroke-width="0.35"
+              stroke-dasharray="1 11" opacity="0.38"/>
+
+
+      <!-- ─────────────────────────────────────────────────────────────── -->
+      <!-- SATKONA — The Divine Interlocking Star                          -->
+      <!--                                                                 -->
+      <!-- Shiva Triangle ▲ (upward) — pure Prakasha (Consciousness/Light) -->
+      <!--   Represents the ascending movement of awareness toward the     -->
+      <!--   Absolute. Vertices at: (0,−185), (160.26, 92.5), (−160.26, 92.5) -->
+      <!--                                                                 -->
+      <!-- Shakti Triangle ▽ (downward) — Vimarsha (Self-reflective Power) -->
+      <!--   Represents Shakti descending into manifestation.              -->
+      <!--   Vertices at: (0,185), (160.26,−92.5), (−160.26,−92.5)        -->
+      <!--                                                                 -->
+      <!-- Inner Hexagon: where ▲ and ▽ intersect at r≈106.84             -->
+      <!--   These 6 points are where Shiva and Shakti continuously meet.  -->
+      <!--   r_hex = R/√3 = 185/1.7321 ≈ 106.84 (verified analytically)   -->
+      <!-- ─────────────────────────────────────────────────────────────── -->
+
+      <!-- Shiva Triangle ▲ — Consciousness ascending; rendered in cool Prakasha blue -->
+      <polygon
+        points="0,-185 160.26,92.5 -160.26,92.5"
+        fill="none"
+        stroke="url(#primary-grad)" stroke-width="1.6"
+        opacity="0.88" filter="url(#glow)"/>
+
+      <!-- Shakti Triangle ▽ — Power descending; rendered in warm Vimarsha gold -->
+      <polygon
+        points="0,185 160.26,-92.5 -160.26,-92.5"
+        fill="none"
+        stroke="url(#gold-grad)" stroke-width="1.6"
+        opacity="0.88" filter="url(#glow)"/>
+
+      <!-- Inner Hexagon — The zone of Shiva-Shakti union                   -->
+      <!-- Subtle metallic stroke; lower opacity to not overwhelm the core  -->
+      <polygon
+        points="106.84,0 53.42,-92.5 -53.42,-92.5 -106.84,0 -53.42,92.5 53.42,92.5"
+        fill="none"
+        stroke="url(#metal-grad)" stroke-width="0.85"
+        opacity="0.45"/>
+
+
+      <!-- ─────────────────────────────────────────────────────────────── -->
+      <!-- VIKĀSA ARCHES — The Blossoming of Consciousness                 -->
+      <!--                                                                 -->
+      <!-- "Vikasa" in Kashmir Shaivism = the outward unfolding of the    -->
+      <!-- Absolute into manifest form; the joy of self-expression.       -->
+      <!--                                                                 -->
+      <!-- Six arches connect adjacent Satkona outer vertices via a       -->
+      <!-- control point at r=225 at the midpoint angle between them.     -->
+      <!-- This creates gentle outward petal-curves beyond the Jnana ring,-->
+      <!-- suggesting the blossoming of consciousness into the Kriya zone. -->
+      <!--                                                                 -->
+      <!-- Control points (r=225 at midpoint angle between each pair):    -->
+      <!--   α=30°:  (112.5, −194.9)   α=90°:  (225, 0)                  -->
+      <!--   α=150°: (112.5,  194.9)   α=210°: (−112.5,  194.9)          -->
+      <!--   α=270°: (−225, 0)         α=330°: (−112.5, −194.9)          -->
+      <!-- ─────────────────────────────────────────────────────────────── -->
+
+<!-- Inner Vikasa petals (connecting inner hexagon vertices)         -->
+      <!-- Control points at r=130, midpoint angle between each hex pair: -->
+      <!--   α=60°: (112.6,−65)  α=120°: (112.6, 65)  α=180°: (0, 130)  -->
+      <!--   α=240°:(−112.6, 65) α=300°:(−112.6,−65)  α=0°:   (0,−130)  -->
+      <g fill="none" stroke="url(#primary-grad)" stroke-width="0.55"
+         opacity="0.38">
+        <path d="M  53.42,-92.5  Q  112.6,-65    106.84,  0"/>
+        <path d="M 106.84,  0    Q  112.6, 65     53.42, 92.5"/>
+        <path d="M  53.42, 92.5  Q    0,  130    -53.42, 92.5"/>
+        <path d="M -53.42, 92.5  Q -112.6, 65   -106.84,  0"/>
+        <path d="M -106.84, 0    Q -112.6,-65    -53.42,-92.5"/>
+        <path d="M -53.42,-92.5  Q    0, -130     53.42,-92.5"/>
+      </g>
+
+
+      <!-- ─────────────────────────────────────────────────────────────── -->
+      <!-- 12 KALA SPOKES — Radial Emanation Lines                        -->
+      <!--                                                                 -->
+      <!-- The 12 Kalas (radiant rays) of Spanda consciousness.           -->
+      <!-- Each ray emanates from the inner resonance ring (r=148)        -->
+      <!-- outward to the Kriya zone boundary (r=222).                    -->
+      <!--                                                                 -->
+      <!-- Precise alignment (verified):                                  -->
+      <!--   Primary spokes (α=0°,60°,120°,180°,240°,300°) align with    -->
+      <!--   the 6 outer Satkona vertices — Shiva & Shakti triangle tips. -->
+      <!--   Secondary spokes (α=30°,90°,150°,210°,270°,330°) align with  -->
+      <!--   the 6 inner hexagon vertices — the union points.             -->
+      <!--                                                                 -->
+      <!-- Coordinate formula: (r·sinα, −r·cosα) for SVG y-down system   -->
+      <!-- ─────────────────────────────────────────────────────────────── -->
+
+      <!-- Primary Kalas: aligned with triangle vertices (Shiva / Shakti tips) -->
+      <!-- Brighter, slightly wider — consciousness moving along its own axes  -->
+      <g stroke="url(#primary-grad)" stroke-width="0.75"
+         fill="none" opacity="0.58" filter="url(#glow)">
+        <!-- α=0°   top:         (0,−148) → (0,−222)                 -->
+        <line x1="0"       y1="-148"   x2="0"       y2="-222"/>
+        <!-- α=60°  upper-right: (128.11,−74) → (192.17,−111)        -->
+        <line x1="128.11"  y1="-74"    x2="192.17"  y2="-111"/>
+        <!-- α=120° lower-right: (128.11, 74) → (192.17, 111)        -->
+        <line x1="128.11"  y1="74"     x2="192.17"  y2="111"/>
+        <!-- α=180° bottom:      (0, 148) → (0, 222)                 -->
+        <line x1="0"       y1="148"    x2="0"       y2="222"/>
+        <!-- α=240° lower-left:  (−128.11, 74) → (−192.17, 111)      -->
+        <line x1="-128.11" y1="74"     x2="-192.17" y2="111"/>
+        <!-- α=300° upper-left:  (−128.11,−74) → (−192.17,−111)      -->
+        <line x1="-128.11" y1="-74"    x2="-192.17" y2="-111"/>
+      </g>
+
+      <!-- Secondary Kalas: aligned with inner hexagon vertices (union points) -->
+      <!-- Subtler gold gradient — Shakti's radiance along the union axes      -->
+      <g stroke="url(#gold-grad)" stroke-width="0.5"
+         fill="none" opacity="0.42">
+        <!-- α=30°  upper-right: (74,−128.11) → (111,−192.17)        -->
+        <line x1="74"      y1="-128.11" x2="111"     y2="-192.17"/>
+        <!-- α=90°  right:       (148, 0) → (222, 0)                 -->
+        <line x1="148"     y1="0"       x2="222"     y2="0"/>
+        <!-- α=150° lower-right: (74, 128.11) → (111, 192.17)        -->
+        <line x1="74"      y1="128.11"  x2="111"     y2="192.17"/>
+        <!-- α=210° lower-left:  (−74, 128.11) → (−111, 192.17)      -->
+        <line x1="-74"     y1="128.11"  x2="-111"    y2="192.17"/>
+        <!-- α=270° left:        (−148, 0) → (−222, 0)               -->
+        <line x1="-148"    y1="0"       x2="-222"    y2="0"/>
+        <!-- α=330° upper-left:  (−74,−128.11) → (−111,−192.17)      -->
+        <line x1="-74"     y1="-128.11" x2="-111"    y2="-192.17"/>
+      </g>
+
+
+      <!-- ─────────────────────────────────────────────────────────────── -->
+      <!-- NODE MARKERS — Consciousness Pulse Points                       -->
+      <!--                                                                 -->
+      <!-- Three tiers of nodes encode the three levels of Spanda:        -->
+      <!--   Outer (r=185): Satkona vertices — Shiva/Shakti polarity tips -->
+      <!--   Inner (r≈107): Hexagon vertices — Shiva-Shakti union points  -->
+      <!--   Spoke tips: 12 nodes at r=148 (inner) and r=222 (outer)      -->
+      <!-- ─────────────────────────────────────────────────────────────── -->
+
+      <!-- Enhancement 5 — Satkona vertex luminous halos                    -->
+      <!-- Soft bloom circles behind each of the 6 outer node markers,      -->
+      <!-- making the star tips glow as true focal points of Spanda energy.  -->
+      <g filter="url(#glow-heavy)" opacity="0.5">
+        <circle cx="0"        cy="-185"  r="9" fill="#818CF8"/>
+        <circle cx="160.26"   cy="92.5"  r="9" fill="#818CF8"/>
+        <circle cx="-160.26"  cy="92.5"  r="9" fill="#818CF8"/>
+        <circle cx="160.26"   cy="-92.5" r="9" fill="#F59E0B"/>
+        <circle cx="0"        cy="185"   r="9" fill="#F59E0B"/>
+        <circle cx="-160.26"  cy="-92.5" r="9" fill="#F59E0B"/>
+      </g>
+
+      <!-- Satkona outer vertex nodes (r=185): 3 Shiva + 3 Shakti -->
+      <!-- Shiva vertices (▲, primary/blue) -->
+      <g filter="url(#glow)">
+        <circle cx="0"        cy="-185"  r="3.8" fill="url(#primary-grad)"/>
+        <circle cx="160.26"   cy="92.5"  r="3.8" fill="url(#primary-grad)"/>
+        <circle cx="-160.26"  cy="92.5"  r="3.8" fill="url(#primary-grad)"/>
+      </g>
+      <!-- Shakti vertices (▽, gold) -->
+      <g filter="url(#glow)">
+        <circle cx="160.26"   cy="-92.5" r="3.8" fill="url(#gold-grad)"/>
+        <circle cx="0"        cy="185"   r="3.8" fill="url(#gold-grad)"/>
+        <circle cx="-160.26"  cy="-92.5" r="3.8" fill="url(#gold-grad)"/>
+      </g>
+      <!-- White halos around outer vertices for crisp presence -->
+      <g fill="none" stroke="#FFFFFF" stroke-width="0.8" opacity="0.3">
+        <circle cx="0"        cy="-185"  r="5.5"/>
+        <circle cx="160.26"   cy="92.5"  r="5.5"/>
+        <circle cx="-160.26"  cy="92.5"  r="5.5"/>
+        <circle cx="160.26"   cy="-92.5" r="5.5"/>
+        <circle cx="0"        cy="185"   r="5.5"/>
+        <circle cx="-160.26"  cy="-92.5" r="5.5"/>
+      </g>
+
+      <!-- Inner hexagon nodes (r≈107): the six Shiva-Shakti union points -->
+      <g filter="url(#glow)" opacity="0.82">
+        <circle cx="106.84"   cy="0"      r="2.8" fill="url(#metal-grad)"/>
+        <circle cx="53.42"    cy="-92.5"  r="2.8" fill="url(#metal-grad)"/>
+        <circle cx="-53.42"   cy="-92.5"  r="2.8" fill="url(#metal-grad)"/>
+        <circle cx="-106.84"  cy="0"      r="2.8" fill="url(#metal-grad)"/>
+        <circle cx="-53.42"   cy="92.5"   r="2.8" fill="url(#metal-grad)"/>
+        <circle cx="53.42"    cy="92.5"   r="2.8" fill="url(#metal-grad)"/>
+      </g>
+
+      <!-- Spoke inner-ring nodes at r=148 (12 points — Kala entry gate) -->
+      <g fill="#FFFFFF" opacity="0.48">
+        <circle cx="0"        cy="-148"   r="1.5"/>
+        <circle cx="74"       cy="-128.11" r="1.5"/>
+        <circle cx="128.11"   cy="-74"    r="1.5"/>
+        <circle cx="148"      cy="0"      r="1.5"/>
+        <circle cx="128.11"   cy="74"     r="1.5"/>
+        <circle cx="74"       cy="128.11" r="1.5"/>
+        <circle cx="0"        cy="148"    r="1.5"/>
+        <circle cx="-74"      cy="128.11" r="1.5"/>
+        <circle cx="-128.11"  cy="74"     r="1.5"/>
+        <circle cx="-148"     cy="0"      r="1.5"/>
+        <circle cx="-128.11"  cy="-74"    r="1.5"/>
+        <circle cx="-74"      cy="-128.11" r="1.5"/>
+      </g>
+
+      <!-- Spoke outer-ring nodes at r=222 (12 points — Kriya zone edge) -->
+      <g fill="#FFFFFF" opacity="0.68" filter="url(#glow)">
+        <circle cx="0"        cy="-222"   r="2"/>
+        <circle cx="111"      cy="-192.17" r="2"/>
+        <circle cx="192.17"   cy="-111"   r="2"/>
+        <circle cx="222"      cy="0"      r="2"/>
+        <circle cx="192.17"   cy="111"    r="2"/>
+        <circle cx="111"      cy="192.17" r="2"/>
+        <circle cx="0"        cy="222"    r="2"/>
+        <circle cx="-111"     cy="192.17" r="2"/>
+        <circle cx="-192.17"  cy="111"    r="2"/>
+        <circle cx="-222"     cy="0"      r="2"/>
+        <circle cx="-192.17"  cy="-111"   r="2"/>
+        <circle cx="-111"     cy="-192.17" r="2"/>
+      </g>
+
+    </g><!-- end #spanda-vibrational-field -->
+
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- CENTRAL COGNITIVE CORE (The Bindu — Seed of Consciousness)         -->
+    <!-- The Bindu is the dimensionless point from which all Spanda          -->
+    <!-- vibration originates. All geometry above radiates from here.        -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <g transform="scale(1.2)">
+      <!-- Core background aura -->
+      <circle cx="0" cy="0" r="65" fill="url(#core-grad)" opacity="0.6" filter="url(#glow-heavy)"/>
+      <circle cx="0" cy="0" r="105" fill="none" stroke="url(#metal-grad)" stroke-width="0.5" stroke-dasharray="2 8" opacity="0.4"/>
+
+      <!-- Matrix Web: stacked polygons -->
+      <g fill="none" opacity="0.6">
+        <!-- R=90 Outer Geometry -->
+        <g stroke="url(#primary-grad)" stroke-width="0.5" filter="url(#glow)">
+          <polygon points="0,-90 90,0 0,90 -90,0" />
+          <polygon points="0,-90 90,0 0,90 -90,0" transform="rotate(30)"/>
+          <polygon points="0,-90 90,0 0,90 -90,0" transform="rotate(60)"/>
+          <polygon points="0,-90 77.94,45 -77.94,45" />
+          <polygon points="0,-90 77.94,45 -77.94,45" transform="rotate(30)"/>
+          <polygon points="0,-90 77.94,45 -77.94,45" transform="rotate(60)"/>
+          <polygon points="0,-90 77.94,45 -77.94,45" transform="rotate(90)"/>
+        </g>
+        <!-- R=60 Inner Geometry -->
+        <g stroke="url(#gold-grad)" stroke-width="0.5" filter="url(#glow)">
+          <polygon points="0,-60 60,0 0,60 -60,0" />
+          <polygon points="0,-60 60,0 0,60 -60,0" transform="rotate(30)"/>
+          <polygon points="0,-60 60,0 0,60 -60,0" transform="rotate(60)"/>
+          <path d="M 0,-60 L 15.5,-15.5 L 60,0 L 15.5,15.5 L 0,60 L -15.5,15.5 L -60,0 L -15.5,-15.5 Z" />
+          <path d="M 0,-60 L 15.5,-15.5 L 60,0 L 15.5,15.5 L 0,60 L -15.5,15.5 L -60,0 L -15.5,-15.5 Z" transform="rotate(30)"/>
+          <path d="M 0,-60 L 15.5,-15.5 L 60,0 L 15.5,15.5 L 0,60 L -15.5,15.5 L -60,0 L -15.5,-15.5 Z" transform="rotate(60)"/>
+        </g>
+      </g>
+
+      <!-- The Bindu Processor -->
+      <g stroke="#FFFFFF" fill="none">
+        <circle cx="0" cy="0" r="30" stroke-width="1.5" opacity="0.8" filter="url(#glow)"/>
+        <circle cx="0" cy="0" r="26" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.9"/>
+        <circle cx="0" cy="0" r="20" stroke="url(#primary-grad)" stroke-width="2.5" opacity="0.7" filter="url(#glow)"/>
+        <path d="M 0,-14 L 3,-5 L 14,0 L 3,5 L 0,14 L -3,5 L -14,0 L -3,-5 Z" stroke-width="1" fill="url(#core-grad)" filter="url(#glow-heavy)"/>
+        <circle cx="0" cy="0" r="5" fill="#FFFFFF" stroke="none"/>
+        <circle cx="0" cy="0" r="2" fill="#0F172A" stroke="none"/>
+      </g>
+
+      <!-- Concentric Orbital Tracks -->
+      <circle cx="0" cy="0" r="45" fill="none" stroke="url(#primary-grad)" stroke-width="0.5" stroke-dasharray="1 6"/>
+      <circle cx="0" cy="0" r="75" fill="none" stroke="url(#gold-grad)" stroke-width="0.5" stroke-dasharray="2 12"/>
+      <circle cx="0" cy="0" r="105" fill="none" stroke="#FFFFFF" stroke-width="0.25" opacity="0.5" stroke-dasharray="1 3"/>
+
+      <!-- Pulse nodes on perimeter -->
+      <g fill="#FFFFFF" filter="url(#glow)" stroke="none">
+        <circle cx="0" cy="-90" r="2" /><circle cx="0" cy="-60" r="1.5" />
+        <circle cx="45" cy="-77.94" r="2" /><circle cx="30" cy="-51.96" r="1.5" />
+        <circle cx="77.94" cy="-45" r="2" /><circle cx="51.96" cy="-30" r="1.5" />
+        <circle cx="90" cy="0" r="2" /><circle cx="60" cy="0" r="1.5" />
+        <circle cx="77.94" cy="45" r="2" /><circle cx="51.96" cy="30" r="1.5" />
+        <circle cx="45" cy="77.94" r="2" /><circle cx="30" cy="51.96" r="1.5" />
+        <circle cx="0" cy="90" r="2" /><circle cx="0" cy="60" r="1.5" />
+        <circle cx="-45" cy="77.94" r="2" /><circle cx="-30" cy="51.96" r="1.5" />
+        <circle cx="-77.94" cy="45" r="2" /><circle cx="-51.96" cy="30" r="1.5" />
+        <circle cx="-90" cy="0" r="2" /><circle cx="-60" cy="0" r="1.5" />
+        <circle cx="-77.94" cy="-45" r="2" /><circle cx="-51.96" cy="-30" r="1.5" />
+        <circle cx="-45" cy="-77.94" r="2" /><circle cx="-30" cy="-51.96" r="1.5" />
+      </g>
+    </g><!-- end scale(1.2) core -->
+
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- 5 SENSORY MODALITY AGENTS — Outer boundary, unchanged              -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+
+    <!-- 1. Document — α=0° (top) -->
+    <g transform="rotate(270) translate(240, 0) rotate(90)">
+      <circle cx="0" cy="0" r="30" fill="#0F172A" stroke="url(#gold-grad)" stroke-width="2.5" filter="url(#glow)"/>
+      <circle cx="0" cy="0" r="36" fill="none" stroke="url(#gold-grad)" stroke-width="1" stroke-dasharray="4 6" opacity="0.5" filter="url(#glow)"/>
+      <circle cx="0" cy="0" r="34" fill="#FDE047" opacity="0.1" filter="url(#glow-heavy)"/>
+      <g transform="scale(1.2)">
+        <path d="M -8,-10 L 4,-10 L 8,-6 L 8,10 L -8,10 Z" fill="none" stroke="#F1F5F9" stroke-width="2" stroke-linejoin="round"/>
+        <line x1="-4" y1="-2" x2="4" y2="-2" stroke="#F1F5F9" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="-4" y1="2" x2="4" y2="2" stroke="#F1F5F9" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="-4" y1="6" x2="1" y2="6" stroke="#F1F5F9" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- 2. Video — α=72° -->
+    <g transform="rotate(342) translate(240, 0) rotate(18)">
+      <circle cx="0" cy="0" r="30" fill="#0F172A" stroke="url(#primary-grad)" stroke-width="2.5" filter="url(#glow)"/>
+      <circle cx="0" cy="0" r="36" fill="none" stroke="url(#primary-grad)" stroke-width="1" stroke-dasharray="4 6" opacity="0.5" filter="url(#glow)"/>
+      <circle cx="0" cy="0" r="34" fill="#38BDF8" opacity="0.1" filter="url(#glow-heavy)"/>
+      <g transform="scale(1.2)">
+        <rect x="-10" y="-8" width="20" height="14" rx="2" fill="none" stroke="#F1F5F9" stroke-width="2"/>
+        <polygon points="-2,-3 5,0 -2,3" fill="#F1F5F9"/>
+        <line x1="-4" y1="10" x2="4" y2="10" stroke="#F1F5F9" stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- 3. Web — α=144° -->
+    <g transform="rotate(54) translate(240, 0) rotate(-54)">
+      <circle cx="0" cy="0" r="30" fill="#0F172A" stroke="url(#gold-grad)" stroke-width="2.5" filter="url(#glow)"/>
+      <circle cx="0" cy="0" r="36" fill="none" stroke="url(#gold-grad)" stroke-width="1" stroke-dasharray="4 6" opacity="0.5" filter="url(#glow)"/>
+      <circle cx="0" cy="0" r="34" fill="#C084FC" opacity="0.15" filter="url(#glow-heavy)"/>
+      <g transform="scale(1.2)">
+        <circle cx="0" cy="0" r="9" fill="none" stroke="#F1F5F9" stroke-width="1.5"/>
+        <ellipse cx="0" cy="0" rx="4" ry="9" fill="none" stroke="#F1F5F9" stroke-width="1.5"/>
+        <line x1="-9" y1="0" x2="9" y2="0" stroke="#F1F5F9" stroke-width="1.5"/>
+      </g>
+    </g>
+
+    <!-- 4. Image — α=216° -->
+    <g transform="rotate(126) translate(240, 0) rotate(-126)">
+      <circle cx="0" cy="0" r="30" fill="#0F172A" stroke="url(#primary-grad)" stroke-width="2.5" filter="url(#glow)"/>
+      <circle cx="0" cy="0" r="36" fill="none" stroke="url(#primary-grad)" stroke-width="1" stroke-dasharray="4 6" opacity="0.5" filter="url(#glow)"/>
+      <circle cx="0" cy="0" r="34" fill="#38BDF8" opacity="0.1" filter="url(#glow-heavy)"/>
+      <g transform="scale(1.2)">
+        <rect x="-10" y="-8" width="20" height="16" rx="2" fill="none" stroke="#F1F5F9" stroke-width="1.5"/>
+        <circle cx="-4" cy="-3" r="1.5" fill="#F1F5F9"/>
+        <path d="M -10,6 L -4,-1 L 2,4 L 5,1 L 10,6" fill="none" stroke="#F1F5F9" stroke-width="1.5" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <!-- 5. Audio — α=288° -->
+    <g transform="rotate(198) translate(240, 0) rotate(-198)">
+      <circle cx="0" cy="0" r="30" fill="#0F172A" stroke="url(#gold-grad)" stroke-width="2.5" filter="url(#glow)"/>
+      <circle cx="0" cy="0" r="36" fill="none" stroke="url(#gold-grad)" stroke-width="1" stroke-dasharray="4 6" opacity="0.5" filter="url(#glow)"/>
+      <circle cx="0" cy="0" r="34" fill="#FDE047" opacity="0.1" filter="url(#glow-heavy)"/>
+      <g transform="scale(1.2)">
+        <rect x="-3" y="-7" width="6" height="11" rx="3" fill="none" stroke="#F1F5F9" stroke-width="1.5"/>
+        <path d="M -7,0 A 7,7 0 0,0 7,0 M 0,7 L 0,11 M -4,11 L 4,11" fill="none" stroke="#F1F5F9" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+    </g>
+
+  </g><!-- end center translate -->
+
+
+
+</svg>

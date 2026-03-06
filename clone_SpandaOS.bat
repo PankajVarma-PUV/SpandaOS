@@ -20,7 +20,7 @@
 
 SET REPO_URL=https://github.com/PankajVarma-PUV/SpandaOS.git
 
-echo 🛡️ SpandaOS Repository Cloner
+echo [SpandaOS] Repository Cloner
 echo ---------------------------------
 echo 📂 Target: %REPO_URL%
 

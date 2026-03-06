@@ -418,7 +418,7 @@ class Config:
         rag_load = chunk_size * top_k
         safety_threshold = int(max_ctx * 0.7) # Leave 30% for system prompt & response
         
-        logger.info(f"🛡️ Context Guardian: RAG Load={rag_load} tokens (Budget={safety_threshold}/{max_ctx})")
+        logger.info(f"Context Guardian: RAG Load={rag_load} tokens (Budget={safety_threshold}/{max_ctx})")
         
         if rag_load > safety_threshold:
             logger.warning("⚠️ CRITICAL CONTEXT DENSITY WARNING ⚠️")

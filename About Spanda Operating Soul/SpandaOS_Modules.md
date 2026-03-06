@@ -110,7 +110,7 @@ This document serves as the single source of truth for the SpandaOS AI system ar
 - `lifespan(app)`: Context manager that bootstraps the LLM wrapper, database connections, and Agent components when the server starts.
 - `_run_startup_diagnostics(state)`: Prints a structured summary banner after all singletons are initialized.
 - `ping()`: A simple health-check route.
-- `ask_query(request)`: Main RAG interaction endpoint. It captures the query and passes it to `MetacognitiveBrain`.
+- `ask_query(request)`: Main Metacognitive interaction endpoint. It captures the query and passes it to `MetacognitiveBrain`.
 - `ingest_document(file)`: Endpoint for uploading multimodal files, routing them to the `DocumentProcessor`.
 - `get_system_status()`: Administrative endpoint to read hardware statistics (VRAM, CPU) and telemetry.
 - `create_conversation(request)`: Endpoint to create a new conversation thread.
@@ -165,7 +165,7 @@ This document serves as the single source of truth for the SpandaOS AI system ar
 - `route_intent(state)`: Wise Intent Routing step for state graph.
 - `decide_initial_path(state)`: Decides if chronicler agent should be engaged.
 - `create_execution_plan(state)`: Invokes the `MultiStagePlanner` to build a DAG.
-- `decide_path(state)`: Conditional transition from planner/router (gates RAG based on evidence).
+- `decide_path(state)`: Conditional transition from planner/router (gates Retrieval based on evidence).
 - `evaluate_knowledge(state)`: Elite Knowledge Evaluator (determines LLM memory vs context).
 - `initiate_direct_flow(state)`: Forces LLM Memory for Direct Path.
 

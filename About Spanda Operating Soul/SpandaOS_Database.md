@@ -10,7 +10,7 @@ This architecture fundamentally relies on two database layers:
 
 ## 1. LanceDB Vectors & Schema (`src/core/database.py`)
 
-LanceDB is responsible for semantic understanding, contextual retrieval (RAG), and agentic memory capabilities. It relies on a Centralized Schema Registry using `pyarrow`.
+LanceDB is responsible for semantic understanding, contextual retrieval (Metacognition), and agentic memory capabilities. It relies on a Centralized Schema Registry using `pyarrow`.
 
 ### Core Tables
 
@@ -22,11 +22,11 @@ LanceDB is responsible for semantic understanding, contextual retrieval (RAG), a
 | **`messages`** | Individual message instances stored with embeddings for contextual lookup. | `id`, `conversation_id`, `role`, `content`, **`vector`** (Float32), `state` (e.g., ACTIVE, PAGED), `token_count` |
 | **`user_personas`** | Agent customization instructions and tone per user. | `user_id`, `tone_settings`, `preferred_language`, `instruction_profile` |
 
-### RAG & Knowledge Tables
+### Metacognitive Retrieval & Knowledge Tables
 
 | Table Name | Description | Key Fields / Schema |
 | :--- | :--- | :--- |
-| **`knowledge_base`** | Core RAG memory. Stores text chunks and vectors. | `id`, `conversation_id`, `file_name`, `text`, **`vector`**, `metadata` |
+| **`knowledge_base`** | Core Retrieval memory. Stores text chunks and vectors. | `id`, `conversation_id`, `file_name`, `text`, **`vector`**, `metadata` |
 | **`conversation_assets`** | Metadata regarding uploaded documents/files within a chat. | `id`, `conversation_id`, `file_hash`, `file_path`, `file_type`, `summary` |
 | **`scraped_content`** | Raw scraped content from websites or documents. | `id`, `file_id`, `content`, `sub_type`, `chunk_index`, `metadata` |
 | **`web_search_knowledge`**| Context extracted from the Web Agent Breakouts. | `id`, `conversation_id`, `query`, `url`, `title`, `text`, **`vector`** |
@@ -39,7 +39,7 @@ LanceDB is responsible for semantic understanding, contextual retrieval (RAG), a
 | :--- | :--- | :--- |
 | **`visual_assets`** | Stores vision-model interpretations and visual embeddings. | `id`, `project_id`, `conversation_id`, `file_name`, **`vector`** (512D) |
 | **`visual_cache`** | Tracks processed video frames for localized deduplication. | `id`, `video_id`, `variance_score`, `frame_id` |
-| **`rag_analytics`** | Quality tracking metrics for RAG responses. | `message_id`, `score_groundedness`, `score_relevancy`, `score_utility` |
+| **`rag_analytics`** | Quality tracking metrics for synthesized responses. | `message_id`, `score_groundedness`, `score_relevancy`, `score_utility` |
 | **`knowledge_distillation`**| Phase 2 tier: extracted hard facts with confidence scores. | `id`, `conversation_id`, `extracted_fact`, `domain`, `confidence` |
 
 ---
@@ -62,7 +62,7 @@ SQLite operates as the deterministic, zero-config relational store powering the 
 
 ## 3. Data Flow Diagram
 
-The following Mermaid diagram outlines the "Unified Persistence" concept and the overall execution flow from Input routing to RAG retrieval and Storage sync.
+The following Mermaid diagram outlines the "Unified Persistence" concept and the overall execution flow from Input routing to Metacognitive retrieval and Storage sync.
 
 ```mermaid
 flowchart TD
@@ -105,12 +105,12 @@ flowchart TD
 
     subgraph Memory & Context Fetching
         Q[User Prompt]:::userNode --> QueryEmbed[Embed Query]:::modelNode
-        QueryEmbed --> RAG_SEARCH{Hybrid Search <br/> FTS + Vector Phase}:::logicNode
+        QueryEmbed --> META_SEARCH{Hybrid Search <br/> FTS + Vector Phase}:::logicNode
         
         %% Fetching data
-        RAG_SEARCH -->|Semantic Core| LANCE_TB_K
-        RAG_SEARCH -->|Visual/Cache Matches| LANCE_TB_M
-        RAG_SEARCH -->|Past Context Search| LANCE_TB_C
+        META_SEARCH -->|Semantic Core| LANCE_TB_K
+        META_SEARCH -->|Visual/Cache Matches| LANCE_TB_M
+        META_SEARCH -->|Past Context Search| LANCE_TB_C
 
         SQL_FETCH[UI & Metadata Fetch]:::logicNode -->|Exact Dialog History| SQL_TB_C
         SQL_FETCH -->|Infinite Paged Memory| SQL_TB_A

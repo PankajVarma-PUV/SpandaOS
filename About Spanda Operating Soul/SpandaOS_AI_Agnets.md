@@ -121,7 +121,7 @@ These 5 agents run entirely in the background when files are uploaded. They are 
 * **File:** `src/agents/intent_classifier.py` — Class: `IntentClassifier`
 * **LangGraph Node:** `route_intent` (the `router` node)
 * **Purpose:** Classifies the query intent and decides the routing path through the LangGraph workflow.
-* **How it Works:** Uses an Ollama LLM to classify queries into: `RAG`, `PERCEPTION`, `GENERAL`, `MULTI_TASK`, or `HISTORY_RECALL`. Also performs `@mention` file parsing and target language detection.
+* **How it Works:** Uses an Ollama LLM to classify queries into: `RETRIEVAL`, `PERCEPTION`, `GENERAL`, `MULTI_TASK`, or `HISTORY_RECALL`. Also performs `@mention` file parsing and target language detection.
 * **📥 Listens To (Inputs):** `SpandaOSState` after the `extractor` node runs
 * **📤 Reports To (Outputs):** The `decide_path()` conditional edge in LangGraph, which routes to `planner`, `chronicler`, or other nodes based on intent
 
@@ -165,7 +165,7 @@ These 5 agents run entirely in the background when files are uploaded. They are 
 * **LangGraph Node:** `retrieval`
 * **Purpose:** Performs hybrid semantic + keyword search over LanceDB and returns the most relevant evidence chunks.
 * **How it Works:** Combines dense vector search (FAISS-style via LanceDB) with BM25 sparse search. Applies inline CrossEncoder reranking (see Agent 5). Supports `@mention`-scoped file isolation.
-* **📥 Listens To (Inputs):** `planner` node (for RAG-path queries)
+* **📥 Listens To (Inputs):** `planner` node (for Retrieval-path queries)
 * **📤 Reports To (Outputs):** `evaluator` node
 
 ---
@@ -287,7 +287,7 @@ These agents are triggered by clicking action buttons in the UI. They bypass the
 * **Location:** Inline inside `MetacognitiveBrain.execute_rag()` node
 * **Purpose:** Expands a single query into multiple retrieval variants to bridge logical gaps across documents.
 * **How it Works:** Uses Chain-of-Thought (CoT) prompting to generate 3 query variations that cover different aspects of the question (definitions, comparisons, practical implications). All variants are retrieved and their evidence merged.
-* **📥 Listens To (Inputs):** `planner` node (for RAG-path queries with complex intent)
+* **📥 Listens To (Inputs):** `planner` node (for Retrieval-path queries with complex intent)
 * **📤 Reports To (Outputs):** `RetrieverAgent` (called for each query variant), results merged into `SpandaOSState["evidence"]`
 * **⚠️ Note:** The separate `QueryAnalyzer` class (`query_analyzer.py`) implemented this feature but was never wired in — archived. This functionality is implemented inline in the Brain.
 

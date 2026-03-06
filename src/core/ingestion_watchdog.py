@@ -40,13 +40,13 @@ class IngestionWatchdog:
         if not self._running:
             self._running = True
             self._task = asyncio.create_task(self._watchdog_loop())
-            logger.info("🛡️ System Watchdog started: Monitoring for stalled ingestions.")
+            logger.info("System Watchdog started: Monitoring for stalled ingestions.")
 
     def stop(self):
         self._running = False
         if self._task:
             self._task.cancel()
-            logger.info("🛡️ System Watchdog stopped.")
+            logger.info("System Watchdog stopped.")
 
     async def _watchdog_loop(self):
         while self._running:
@@ -88,4 +88,4 @@ class IngestionWatchdog:
                     "UPDATE ingestion_status SET status = 'FAILED', updated_at = ? WHERE id = ?",
                     (datetime.utcnow().isoformat(), job['id'])
                 )
-                logger.info(f"🛡️ Job {job['id']} marked as FAILED for manual retry.")
+                logger.info(f"Job {job['id']} marked as FAILED for manual retry.")

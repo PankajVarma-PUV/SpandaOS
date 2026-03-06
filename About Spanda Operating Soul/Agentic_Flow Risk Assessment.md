@@ -1,12 +1,12 @@
 # Agentic Flow: Risk Assessment
 
 ## Overview
-This document details the **Risk Assessment** flow in SpandaOS. It explains how the system transitions from a standard RAG query to a dedicated "Vulnerability Scanner" that strictly outputs JSON data to render a dynamic risk widget and table.
+This document details the **Risk Assessment** flow in SpandaOS. It explains how the system transitions from a Grounded Cognitive Query to a dedicated "Vulnerability Scanner" that strictly outputs JSON data to render a dynamic risk widget and table.
 
 ## Step-by-Step Flow
 
 ### Step 1
-After the end of RAG based queries we will have three agentic buttons. One of the Button is 'Risk Assessment'.
+After the end of Grounded Cognitive queries we will have three agentic buttons. One of the Button is 'Risk Assessment'.
 
 ![Risk Assessment Step 1](Media/Agentic/Risk1.png)
 
@@ -41,7 +41,7 @@ flowchart TD
     classDef uiElement fill:#16a085,stroke:#1abc9c,stroke-width:2px,color:#fff,rx:5px,ry:5px
     classDef finishNode fill:#27ae60,stroke:#2ecc71,stroke-width:2px,color:#fff,rx:5px,ry:5px
 
-    A[User Completes Standard RAG Query]:::stateNode --> B{Agentic Action Buttons UI Displayed}:::uiElement
+    A[User Completes Grounded Cognitive Query]:::stateNode --> B{Agentic Action Buttons UI Displayed}:::uiElement
     
     B -->|User Clicks| C(Risk Assessment Button clicked):::userAction
     B --> btn2(Other Agentic Function...):::uiElement
@@ -73,7 +73,7 @@ flowchart TD
     K --> L[Generate AI Predicted Next Steps]:::agentCore
     L --> M{Display Prediction Action Tags}:::uiElement
     
-    M -->|User Clicks AI Suggestion| N[Trigger Next Generative RAG/Agentic Context Query]:::userAction
+    M -->|User Clicks AI Suggestion| N[Trigger Next Context-Aware Synthesis Query]:::userAction
     M -->|User Ignores Recommendations| O([End of Current Risk Flow]):::finishNode
     
     N --> A

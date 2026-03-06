@@ -2003,8 +2003,8 @@ EXECUTIVE SUMMARY:"""
         # RISK ASSESSMENT — Phase 2: Generative UI (JSON Widget)
         # ═══════════════════════════════════════════════════════════════════
         elif intent == "RISK_ASSESSMENT":
-            yield {"type": "status", "agent": "🛡️ Risk Analyst", "stage": "Running structured risk analysis..."}
-            yield {"type": "thought", "agent": "🛡️ Risk Analyst", "action": "Scanning evidence for risks, biases, and vulnerabilities..."}
+            yield {"type": "status", "agent": "Risk Analyst", "stage": "Running structured risk analysis..."}
+            yield {"type": "thought", "agent": "Risk Analyst", "action": "Scanning evidence for risks, biases, and vulnerabilities..."}
 
             risk_schema = {
                 "overall_score": "integer 0-100 (100 = highest risk)",
@@ -2075,14 +2075,14 @@ JSON RESPONSE:"""
                 logger.info(f"AgenticAction: Risk JSON parsed successfully. Score: {risk_data.get('overall_score')}")
                 yield {"type": "json_chunk", "data": risk_data}
                 final_content = f"**Risk Assessment Complete** — Overall Score: {risk_data.get('overall_score', 'N/A')}/100 | Level: {risk_data.get('risk_level', 'UNKNOWN')}"
-                yield {"type": "thought", "agent": "🛡️ Risk Analyst", "action": f"Risk matrix compiled: {len(risk_data.get('risks', []))} risks identified at {risk_data.get('risk_level', 'UNKNOWN')} level."}
+                yield {"type": "thought", "agent": "Risk Analyst", "action": f"Risk matrix compiled: {len(risk_data.get('risks', []))} risks identified at {risk_data.get('risk_level', 'UNKNOWN')} level."}
             except (json.JSONDecodeError, ValueError) as parse_err:
                 logger.error(f"AgenticAction: Risk JSON parse failed: {parse_err}. Falling back to markdown.")
                 # FALLBACK: render as plain markdown  
                 final_content = raw_json_str.strip() or "Risk assessment could not be generated. Please try again."
                 for token in final_content.split(" "):
                     yield {"type": "token", "token": token + " "}
-                yield {"type": "thought", "agent": "🛡️ Risk Analyst", "action": "Analysis complete (markdown mode — JSON parse failed)."}
+                yield {"type": "thought", "agent": "Risk Analyst", "action": "Analysis complete (markdown mode — JSON parse failed)."}
 
         # ═══════════════════════════════════════════════════════════════════
         # PHASE 4: PROACTIVE NEXT BEST ACTION GENERATION

@@ -27,7 +27,7 @@ SET BRANCH=main
 :: Use UTF-8 for better character support in modern CMD/PowerShell
 chcp 65001 >nul
 
-echo 🛡️ SpandaOS GitHub Recovery Uploader
+echo [SpandaOS] GitHub Recovery Uploader
 echo ---------------------------------------
 
 :: 1. Force Cleanup of any stuck background processes

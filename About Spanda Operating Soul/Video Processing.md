@@ -20,13 +20,13 @@ Once uploaded, **the system will detect the video file and start extracting mean
 
 ![Step 3: Narrative Enrichment](Media/Video/video3.png)
 
-## Step 4: Knowledge Base Storage & RAG Initiation
-**Once enrichment gets done and the video-related textual data gets stored in the knowledge base, the application starts processing the user query with the RAG (Retrieval-Augmented Generation) flow.** By securely indexing the enriched temporal dossier into our vector database, the originally unstructured video file transforms into a searchable repository of actionable intelligence.
+## Step 4: Knowledge Base Storage & Metacognitive Retrieval Initiation
+**Once enrichment gets done and the video-related textual data gets stored in the knowledge base, the application starts processing the user query with the Metacognitive Retrieval flow.** By securely indexing the enriched temporal dossier into our vector database, the originally unstructured video file transforms into a searchable repository of actionable intelligence.
 
 ![Step 4: Knowledge Base Storage](Media/Video/video4.png)
 
 ## Step 5: Context Retrieval & Synthesizer Generation
-**Based on the user query, the RAG flow scrapes the relevant context from the knowledge base and delivers it to the Synthesizer model to generate a proper response.** The RAG semantic search engine locates the exact chronological fragments from the video—whether spoken, seen, or read on-screen—that hold the answer, ensuring the synthesizer relies purely on grounded evidence.
+**Based on the user query, the Metacognitive Retrieval flow scrapes the relevant context from the knowledge base and delivers it to the Synthesizer model to generate a proper response.** The semantic search engine locates the exact chronological fragments from the video—whether spoken, seen, or read on-screen—that hold the answer, ensuring the synthesizer relies purely on grounded evidence.
 
 ![Step 5: Context Retrieval](Media/Video/video5.png)
 
@@ -104,9 +104,9 @@ graph TD
     R --> S[Qwen3:8B Narrative Enricher Model]:::model
     S --> |Generates Cinematic Description| T[Enriched Multi-Modal Knowledge File]:::storage
     
-    %% Storage & RAG Phase
+    %% Storage & Metacognitive Retrieval Phase
     T --> U[(Vector Database Indexed)]:::storage
-    U --> |Triggered by Original Query| V[RAG Semantic Matcher]:::process
+    U --> |Triggered by Original Query| V[Metacognitive Semantic Matcher]:::process
     V --> |Inject Video Chunks as Context| W[Synthesizer Model]:::model
     
     %% Validation Phase
